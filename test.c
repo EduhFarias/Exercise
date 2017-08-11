@@ -1,1 +1,0 @@
-Valdir é o Mestre

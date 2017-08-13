@@ -18,4 +18,6 @@ void printLinkedList(Node *first);
 int isEmpty(Node *first);
 Node* search(Node *first, int item);
 Node* removeNode(Node *first, int item);
+//Função que verifica se a lista B é um subconjunto da lista A
+void check(Node *A, Node *B);
 #endif //EXERCISE_LINKEDLIST_H

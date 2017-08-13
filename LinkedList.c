@@ -45,3 +45,19 @@ Node* removeNode(Node *head, int item){
     }
     free(current);
     return head;
+}
+// Exercício 1, da lista-Listas.
+void check(Node *A, Node *B){
+    while(B != NULL){
+        while(A != NULL){
+            if(B->item != A->item){
+                printf("List B isn't subset of the list A\n");
+                return;
+            }
+            A = A->next;
+        }
+        B = B->next;
+    }
+    printf("List B is a subset of the list A\n");
+    return;
+}

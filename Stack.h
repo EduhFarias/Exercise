@@ -16,11 +16,11 @@ typedef struct stack Stack;
 
 Stack* createStack();
 
-void push(Stack *stack, int item);
+void push(Stack *stack, char item);
 
-int pop(Stack *stack);
+char pop(Stack *stack);
 
-int peek(Stack *stack);
+char peek(Stack *stack);
 
 int isEmpty(Stack *stack);
 

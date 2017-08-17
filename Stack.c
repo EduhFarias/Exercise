@@ -3,56 +3,61 @@
 #include "Stack.h"
 
 typedef struct node{
-	int item;
+	char item;
 	struct node *next;
 }Node;
 
 typedef struct stack{
 	Node *top;
+    int size;
 }Stack;
 
 Stack* createStack(){
 	Stack *new_stack = (Stack*) malloc(sizeof(Stack));
 	new_stack->top = NULL;
+    new_stack->size = 0;
 	return new_stack;
 }
 
-Node* createNode(int item){
+Node* createNode(char item){
 	Node* new_top = (Node*) malloc(sizeof(Node));
 	new_top->item = item;
 	new_top->next = NULL;
 	return new_top;
 }
 
-void push(Stack *stack, int item){
+void push(Stack *stack, char item){
 	Node *new_top = createNode(item);
 	new_top->next = stack->top;
 	stack->top = new_top;
+    (stack->size)++;
 }
 
-int pop(Stack *stack){
+int compareStacks(Stack *s, Stack * p);
+char pop(Stack *stack){
 	if(isEmpty(stack)){
 		printf("Stack underflow");
-		return -9999;
+		return '\0';
 	} else{
-		int x;
+		char x;
 		Node * tmp = stack->top;
 		stack->top = stack->top->next;
+        (stack->size)--;
 		x = tmp->item;
 		free(tmp);
 		return x;
 	}
 }
 
-int peek(Stack *stack){
+char peek(Stack *stack){
 	if(isEmpty(stack)){
 		printf("Stack underflow");
-		return -9999;
+		return '\0';
 	} else{
 		return stack->top->item;
 	}
 }
 
 int isEmpty(Stack *stack){
-	return (stack->top == NULL);
+	return (stack->size == 0);
 }

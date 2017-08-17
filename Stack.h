@@ -10,14 +10,9 @@
     TAD para representar uma Pilha.
  */
  
-typedef struct node{
-	int item;
-	struct node *next;
-}Node;
+typedef struct node Node;
 
-typedef struct stack{
-	Node *top;
-}Stack;
+typedef struct stack Stack;
 
 Stack* createStack();
 

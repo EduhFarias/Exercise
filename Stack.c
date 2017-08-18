@@ -33,7 +33,6 @@ void push(Stack *stack, char item){
     (stack->size)++;
 }
 
-int compareStacks(Stack *s, Stack * p);
 char pop(Stack *stack){
 	if(isEmpty(stack)){
 		printf("Stack underflow");

@@ -18,6 +18,8 @@ Stack* createStack();
 
 void push(Stack *stack, char item);
 
+int compare(Stack *s, Stack *p);
+
 char pop(Stack *stack);
 
 char peek(Stack *stack);

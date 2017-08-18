@@ -28,7 +28,6 @@ int main(){
     }
     if(flag == 1) printf("%s é um palíndromo\n", string);
     else printf("%s não é um palíndromo\n", string);
-    printf("%d\n", flag);
 
     return 0;
 }

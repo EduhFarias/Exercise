@@ -15,7 +15,7 @@ typedef struct stack{
 Stack* createStack(){
 	Stack *new_stack = (Stack*) malloc(sizeof(Stack));
 	new_stack->top = NULL;
-    new_stack->size = 0;
+    	new_stack->size = 0;
 	return new_stack;
 }
 
@@ -30,7 +30,7 @@ void push(Stack *stack, char item){
 	Node *new_top = createNode(item);
 	new_top->next = stack->top;
 	stack->top = new_top;
-    (stack->size)++;
+    	(stack->size)++;
 }
 
 char pop(Stack *stack){
@@ -41,7 +41,7 @@ char pop(Stack *stack){
 		char x;
 		Node * tmp = stack->top;
 		stack->top = stack->top->next;
-        (stack->size)--;
+        	(stack->size)--;
 		x = tmp->item;
 		free(tmp);
 		return x;

@@ -6,6 +6,7 @@
 #define MAX 1000
 
 int main(){
+    //criar uma função que faça o que está abaixo
     char string[MAX];
     scanf("%s", string);
     int i;

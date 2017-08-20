@@ -60,3 +60,19 @@ char peek(Stack *stack){
 int isEmpty(Stack *stack){
 	return (stack->size == 0);
 }
+
+int compare(Stack *s, Stack *p, int size){
+	int i, flag = 1;
+
+	for(i = 0; i < (size/2); i++){
+		push(p, pop(s));
+	}
+	if(size % 2 != 0) pop(s);
+
+	for(i = 0; i < (size/2); i++){
+		if(pop(s) != pop(p)){
+			flag = 0;
+		}
+	}
+	return flag;
+}

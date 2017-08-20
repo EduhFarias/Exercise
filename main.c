@@ -6,7 +6,6 @@
 #define MAX 1000
 
 int main(){
-    //criar uma função que faça o que está abaixo
     char string[MAX];
     scanf("%s", string);
     int i;
@@ -15,20 +14,9 @@ int main(){
     for(i = 0; i < strlen(string); i++){
         push(s,string[i]);
     }
-    for(i = 0; i < strlen(string) / 2; i++){
-        push(p, pop(s));
-    }
-    if(strlen(string) % 2 != 0){
-        pop(s);
-    }
-    int flag=1;
-    for(i = 0; i < strlen(string) / 2; i++){
-        if(pop(s) != pop(p)){
-            flag = 0;
-        }
-    }
-    if(flag == 1) printf("%s é um palíndromo\n", string);
-    else printf("%s não é um palíndromo\n", string);
+    if(compare(s, p, strlen(string))){
+        printf("%s eh um palindromo\n", string);
+    } else printf("%s nao eh um palindromo\n", string);
 
     return 0;
 }

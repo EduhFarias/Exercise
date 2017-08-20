@@ -18,12 +18,12 @@ Stack* createStack();
 
 void push(Stack *stack, char item);
 
-int compare(Stack *s, Stack *p);
-
 char pop(Stack *stack);
 
 char peek(Stack *stack);
 
 int isEmpty(Stack *stack);
+
+int compare(Stack *s, Stack *p, int size);
 
 #endif //EXERCISE_STACK_H

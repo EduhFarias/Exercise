@@ -18,7 +18,7 @@ PriorityQueue* createPriorityQueue();
 
 void enqueue(PriorityQueue *Priority_Queue, int a, int b);
 
-node* dequeue(PriorityQueue *Priority_Queue);
+Node* dequeue(PriorityQueue *Priority_Queue);
 
 int isEmpty(PriorityQueue *Priority_Queue);
 

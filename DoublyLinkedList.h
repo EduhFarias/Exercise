@@ -9,11 +9,7 @@
     TAD para representar uma Lista Duplamente Encadeada.
  */
 
-typedef struct node{
-    int item;
-    struct node *next;
-    struct node *previous;
-}Node;
+typedef struct node Node;
 
 Node* createDoublyLinkedList();
 

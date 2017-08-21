@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 
+typedef struct node{
+    int item;
+    struct node *next;
+}Node;
+
 Node* createLinkedList(){
     return NULL;
 }

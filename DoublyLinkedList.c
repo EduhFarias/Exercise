@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include "DoublyLinkedList.h"
 
+typedef struct node{
+    int item;
+    struct node *next;
+    struct node *previous;
+}Node;
+
 Node* createDoublyLinkedList(){
     return NULL;
 }

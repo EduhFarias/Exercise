@@ -9,10 +9,7 @@
     TAD para representar uma Lista Encadeada.
  */
 
-typedef struct node{
-    int item;
-    struct node *next;
-}Node;
+typedef struct node Node;
 
 Node* createLinkedList();
 

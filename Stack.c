@@ -76,3 +76,14 @@ int compare(Stack *s, Stack *p, int size){
 	}
 	return flag;
 }
+
+Stack* convert(int number){
+    Stack *s = createStack();
+    int tmp;
+    while(number != 0) {
+        tmp = number % 2;
+        number /= 2;
+        push(s, tmp);
+    }
+    return s;
+}

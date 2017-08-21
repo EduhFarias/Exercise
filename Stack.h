@@ -23,7 +23,9 @@ char pop(Stack *stack);
 char peek(Stack *stack);
 
 int isEmpty(Stack *stack);
-
+//Função que compara duas pilhas e retorna um booleano.
 int compare(Stack *s, Stack *p, int size);
+//Função que recebe um inteiro, converte para binário e o retorna em uma pilha.
+Stack* convert(int number);
 
 #endif //EXERCISE_STACK_H

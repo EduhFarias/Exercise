@@ -9,7 +9,7 @@ typedef struct node{
 
 typedef struct stack{
 	Node *top;
-    int size;
+    	int size;
 }Stack;
 
 Stack* createStack(){

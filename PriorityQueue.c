@@ -62,6 +62,6 @@ int maximum(PriorityQueue *Priority_Queue){
 int printPriorityQueue(PriorityQueue *Priority_Queue{
   while(Priority_Queue->head != NULL){
     printf("%d", Priority_Queue->head->item);
-    Priority_Queue->head->next;
+    Priority_Queue->head = Priority_Queue->head->next;
   }
 }

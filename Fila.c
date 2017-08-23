@@ -37,6 +37,7 @@ int dequeue(Queue *queue){
     int dequeue = queue->items[queue->head];
     queue->head = (queue->head + 1) % MAX_QUEUE_SIZE;
     queue->current_size--;
+    return dequeue;
   }
 }
 

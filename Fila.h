@@ -3,8 +3,8 @@
 //
 
 
-#ifndef EXERCISE_QUEUE_H
-#define EXERCISE_QUEUE_H
+#ifndef EXERCISE_FILA_H
+#define EXERCISE_FILA_H
 /*
     Queue.h
     TAD para representar uma Fila, usando array.
@@ -20,4 +20,4 @@ int dequeue(Queue *queue);
 
 int isEmpty(Queue *queue);
 
-#endif //EXERCISE_QUEUE_H
+#endif //EXERCISE_FILA_H

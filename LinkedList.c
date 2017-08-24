@@ -83,5 +83,4 @@ void check(Node *A, Node *B){
         B = B->next;
     }
     printf("List B is a subset of the list A\n");
-    return;
 }

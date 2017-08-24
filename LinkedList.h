@@ -13,7 +13,9 @@ typedef struct node Node;
 
 Node* createLinkedList();
 
-Node* insertNode(Node *node, int item);
+Node* insertNodeHead(Node *node, int item);
+
+Node* insertNodeTail(Node *head, int item);
 
 void printLinkedList(Node *head);
 

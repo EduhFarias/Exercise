@@ -10,12 +10,31 @@ typedef struct node{
 Node* createLinkedList(){
     return NULL;
 }
-Node* insertNode(Node *head, int item){
+Node* insertNodeHead(Node *head, int item){
     Node *new_node = (Node*) malloc(sizeof(Node));
     new_node->item = item;
     new_node->next = head;
     return new_node;
 }
+
+Node* insertNodeTail(Node *head, int item){
+    Node *new_node = (Node*) malloc(sizeof(Node));
+    if(head == NULL){
+        new_node->item = item;
+        new_node->next = NULL;
+        return new_node;
+    } else{
+        Node *n = head;
+        while(n->next != NULL){
+            n = n->next;
+        }
+        new_node->item = item;
+        new_node->next = NULL;
+        n->next = new_node;
+        return head;
+    }
+}
+
 void printLinkedList(Node *head){
     while(head != NULL){
         printf("%d\n", head->item);

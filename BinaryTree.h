@@ -15,6 +15,8 @@ BinaryTree* createEmptyBinaryTree();
 
 BinaryTree* createBinaryTree(int item, BinaryTree *left, BinaryTree *right);
 
+BinaryTree* add(BinaryTree *bt, int item);
+
 BinaryTree* search(BinaryTree *bt, int item);
 
 void printInOrder(BinaryTree *bt);

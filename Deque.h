@@ -24,6 +24,5 @@ int dequeueTail(Deque *queue);
 
 int isEmpty(Deque *queue);
 
-//http://www.inf.puc-rio.br/~inf1620/material/slides/capitulo12.PDF
 
 #endif //EXERCISE_DEQUE_H

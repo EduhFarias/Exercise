@@ -27,6 +27,7 @@ void enqueue(Queue *queue, int item){
   queue->tail = new_node;
   } else{
     queue->tail->next = new_node;
+    queue->tail = new_node;
   }
 }
 

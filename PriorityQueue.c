@@ -38,13 +38,13 @@ void enqueue(PriorityQueue *Priority_Queue, int a, int b){
 Node* dequeue(PriorityQueue *Priority_Queue){
   if(isEmpty(Priority_Queue)){
     printf("Priority Queue underflow");
-    return -1;
+    return NULL;
   } else{
     Node *node = Priority_Queue->head;
     Priority_Queue->head = Priority_Queue->head->next;
     node->next = NULL;
-    //Retorna a cabeça da fila, mas não elimina ela. Necessário dar free após uso.
-    return node;
+    free(node);
+    return Priority_Queue->head;
   }
 }
 

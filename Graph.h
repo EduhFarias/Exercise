@@ -14,6 +14,8 @@ typedef struct graph Graph;
 
 Graph* createGraph();
 
+AdjList* createAdjList(int item);
+
 void add_edge(Graph *graph, int vertex1, int vertex2);
 
 void dfs(Graph *graph, int source);

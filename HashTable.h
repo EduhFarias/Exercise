@@ -4,20 +4,19 @@
     HashTable.h
  */
 
-typedef struct node Node;
+typedef struct element Element;
+typedef struct hash_table HashTable;
 
-Node* createDoublyLinkedList();
+HashTable* createHashTable();
 
-Node* insertNode(Node *head, int item);
+void put(HashTable *ht, int key, int value);
 
-void printDoublyLinkedList_Foward(Node *head);
+int get(HashTable ht*, int key);
 
-void printDoublyLinkedList_Backward(Node *tail);
+void remove(HashTable ht*, int key);
 
-int isEmpty(Node *head);
+int containsKey(HashTable ht*, int key);
 
-Node* search(Node *head, int item);
-
-Node* removeNode(Node *head, int item);
+void printHashTable(HashTable *ht);
 
 #endif //EXERCISE_HASHTABLE_H

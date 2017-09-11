@@ -17,11 +17,11 @@ void* enqueue(Heap *heap, int item);
 
 int dequeue(Heap *heap);
 
-int getParentIndex(Heap *heap);
+int getParentIndex(Heap *heap, int i);
 
-int getLeftIndex(Heap *heap);
+int getLeftIndex(Heap *heap, int i);
 
-int getRightIndex(Heap *heap);
+int getRightIndex(Heap *heap, int i);
 
 void max_heapify(Heap *heap, int item);
 

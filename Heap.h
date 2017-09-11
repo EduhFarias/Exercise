@@ -23,11 +23,11 @@ int getLeftIndex(Heap *heap, int i);
 
 int getRightIndex(Heap *heap, int i);
 
-void max_heapify(Heap *heap, int item);
+void max_heapify(Heap *heap, int i);
 
-void min_heapify(Heap *heap, int item);
+void min_heapify(Heap *heap, int i);
 
-int item_of(Heap *heap, int item);
+int item_of(Heap *heap, int i);
 
 void heapsort(Heap *heap);
 

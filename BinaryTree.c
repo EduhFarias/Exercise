@@ -4,8 +4,8 @@
 
 typedef struct binary_tree{
   int item;
-  binary_tree left;
-  binary_tree right;
+  binary_tree *left;
+  binary_tree *right;
 }BinaryTree;
 
 BinaryTree* createEmptyBinaryTree(){
@@ -16,13 +16,13 @@ BinaryTree* createBinaryTree(int item, BinaryTree *left, BinaryTree *right){
   BinaryTree *new_bt = (BinaryTree*) malloc(sizeof(BinaryTree));
   new_bt->item = item;
   new_bt->left = left;
-  new_bt->right - right;
+  new_bt->right = right;
   return new_bt;
 }
 
 BinaryTree* add(BinaryTree *bt, int item){
   if(bt == NULL){
-    bt = createBinaryTree(int item, NULL, NULL);
+    bt = createBinaryTree(item, NULL, NULL);
   } else if(bt->item > item){
     bt->left =  add(bt->left, item);
   } else{

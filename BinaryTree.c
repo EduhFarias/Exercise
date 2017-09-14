@@ -42,7 +42,7 @@ BinaryTree* search(BinaryTree *bt, int item){
 }
 
 void printInOrder(BinaryTree *bt){
-  if(!isEmpty(bt)){
+  if(isEmpty(bt)){
     printInOrder(bt->left);
     printf("%d", bt->item);
     printInOrder(bt->right);
@@ -50,7 +50,7 @@ void printInOrder(BinaryTree *bt){
 }
 
 void printPreOrder(BinaryTree *bt){
-  if(!isEmpty(bt)){
+  if(isEmpty(bt)){
     printf("%d", bt->item);
     printPreOrder(bt->left);
     printPreOrder(bt->right);
@@ -58,7 +58,7 @@ void printPreOrder(BinaryTree *bt){
 }
 
 void printPostOrder(BinaryTree *bt){
-  if(!isEmpty(bt)){
+  if(isEmpty(bt)){
     printPostOrder(bt->left);
     printPostOrder(bt->right);
     printf("%d", bt->item);
@@ -66,7 +66,7 @@ void printPostOrder(BinaryTree *bt){
 }
 
 int isEmpty(BinaryTree *bt){
-  return (bt == NULL);
+  return (bt != NULL);
 }
 
 BinaryTree* remove(BinaryTree *bt, int item){

@@ -4,8 +4,8 @@
 
 typedef struct binary_tree{
   int item;
-  binary_tree *left;
-  binary_tree *right;
+  struct binary_tree *left;
+  struct binary_tree *right;
 }BinaryTree;
 
 BinaryTree* createEmptyBinaryTree(){

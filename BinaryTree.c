@@ -52,15 +52,15 @@ void printInOrder(BinaryTree *bt){
 void printPreOrder(BinaryTree *bt){
   if(!isEmpty(bt)){
     printf("%d", bt->item);
-    printInOrder(bt->left);
-    printInOrder(bt->right);
+    printPreOrder(bt->left);
+    printPreOrder(bt->right);
   }
 }
 
 void printPostOrder(BinaryTree *bt){
   if(!isEmpty(bt)){
-    printInOrder(bt->left);
-    printInOrder(bt->right);
+    printPostOrder(bt->left);
+    printPostOrder(bt->right);
     printf("%d", bt->item);
   }
 }

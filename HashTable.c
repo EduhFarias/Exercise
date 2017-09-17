@@ -14,7 +14,7 @@ typedef struct hash_table{
 }HashTable;
 
 HashTable* createHashTable(){
-  HashTable new_hash = (HashTable*) malloc(sizeof(HashTable));
+  HashTable *new_hash = (HashTable*) malloc(sizeof(HashTable));
   int i;
   for(i = 0; i < MAX; i++){
   new_hash->table[i] = NULL;

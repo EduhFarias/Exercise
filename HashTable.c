@@ -10,7 +10,7 @@ typedef struct element{
 }Element;
 
 typedef struct hash_table{
-  element *table[MAX];
+  Element *table[MAX];
 }HashTable;
 
 HashTable* createHashTable(){
@@ -40,15 +40,33 @@ void put(HashTable *ht, int key, int value){
 }
 
 int get(HashTable ht*, int key){
-  
+  int h = key % MAX;
+  while(ht->table[h] != NULL){
+    if(ht->table[h]->key == key){
+      return ht->table[h]->value;
+    }
+    h = (h + 1) % MAX;
+  }
+  //return ;
 }
 
 void remove(HashTable ht*, int key){
-  
+  int h = key % MAX;
+  while(ht->table[h] != NULL){
+    if(ht->table[h]->key == key){
+      ht->table[h]->key = -1;
+    }
+    h = (h + 1) % MAX;
+  }
 }
 
 int containsKey(HashTable ht*, int key){
-  
+  int h = key % MAX;
+  while(ht->table[h] != NULL){
+    if(ht->table[h]->key == key){
+      return 1;
+    }
+  } return 0;
 }
 
 void printHashTable(HashTable *ht){

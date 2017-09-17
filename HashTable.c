@@ -7,6 +7,7 @@
 typedef struct element{
   int key;
   int value;
+  struct element *next;
 }Element;
 
 typedef struct hash_table{
@@ -24,19 +25,20 @@ HashTable* createHashTable(){
 
 void put(HashTable *ht, int key, int value){
   int h = key % MAX;
-  while(ht->table[h] != NULL){
-    if(ht->table[h]->key == key){
-      ht->table[h]->value = value;
-      break;
-    }
-    h = (h+1) % MAX;
-  }
+  Element *new_e = (Element*) malloc(sizeof(Element));
+  new_e->key = key;
+  new_e->value = value;
+  new_e->next = NULL;
   if(ht->table[h] == NULL){
-    Element *new_e = (Element*) malloc(sizeof(Element));
-    new_e->key = key;
-    new_e->value = value;
     ht->table[h] = new_e;
-  }
+  } else{
+    Element *start, *end;
+    start = ht->table[h];
+    while(start){
+      end = start;
+      start = start->next;
+    }
+    end->next = new_e;
 }
 
 int get(HashTable ht*, int key){
@@ -47,7 +49,18 @@ int get(HashTable ht*, int key){
     }
     h = (h + 1) % MAX;
   }
-  //return ;
+  /*if(ht->table[h] == key) return ht->table[h]->value;
+    else{
+      Element *aux = ht->table[h]->next;
+      while(aux){
+        if(aux->next == key){
+          return aux->value;
+        }
+        aux = aux->next;
+      }
+      return -1;
+    }
+  */
 }
 
 void remove(HashTable ht*, int key){

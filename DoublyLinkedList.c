@@ -54,7 +54,7 @@ Node* removeNode(Node *head, int item){
     if(head == current){
         head = current->next;
     } else{
-        current->previous->next = current->previous;
+        current->previous->next = current->next;
     }
 
     if(current->next != NULL){

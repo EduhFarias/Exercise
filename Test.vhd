@@ -1,25 +1,24 @@
 LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL
+USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
-  
-entity test is
-  port(
-    BCD : int std_logic_vector(3 down to 0);
-    clk : in std_logic;
-    
-    
-    display : out std_logic_vector(6 downto 0)
-  );
-end test;  
 
-architecture arch of test is
-  -- uso de signal ou constant
-  begin
-  
-  --uso de when else, ou uso de with ... select /n ... <= with "..."
-  
-end arch;
+ENTITY COMPARATOR IS
+	PORT(
+		A : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    B : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    
+    O : OUT STD_LOGIC
+	);
+END TEST;
+
+ARCHITECTURE ARCH OF COMPARATOR IS 
+	--
+	BEGIN
+	
+	
+	
+END ARCH;
   
   
 http://vhdlguru.blogspot.com.br/2010/03/vhdl-code-for-bcd-to-7-segment-display.html

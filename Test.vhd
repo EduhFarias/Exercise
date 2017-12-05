@@ -16,46 +16,48 @@ ARCHITECTURE ARCH OF COMPARATOR IS
 	--
 	BEGIN
 		WITH A SELECT
-			DISPLAY_1 <= "0000001" WHEN "0000"  -- '0'
-						 "1001111" WHEN "0001"  -- '1'
-						 "0010010" WHEN "0010"  -- '2'
-						 "0000110" WHEN "0011"  -- '3'
-						 "1001100" WHEN "0100"  -- '4' 
-						 "0100100" WHEN "0101"  -- '5'
-						 "0100000" WHEN "0110"  -- '6'
-						 "0001111" WHEN "0111"  -- '7'
-						 "0000000" WHEN "1000"  -- '8'
-						 "0000100" WHEN "1001"  -- '9'
-
-    BEGIN
+			DISPLAY_1 <= "1000000" WHEN "0000",  -- '0'
+							 "1111001" WHEN "0001", -- '1'
+							 "0100100" WHEN "0010",  -- '2'
+							 "0110000" WHEN "0011",  -- '3'
+							 "0011001" WHEN "0100",  -- '4' 
+							 "0010010" WHEN "0101",  -- '5'
+							 "0000010" WHEN "0110",  -- '6'
+							 "1111000" WHEN "0111",  -- '7'
+							 "0000000" WHEN "1000",  -- '8'
+							 "0010000" WHEN "1001",  -- '9'
+							 "1111111" WHEN OTHERS;	
+    
 		WITH B SELECT
-			DISPLAY_2 <= "0000001" WHEN "0000"  -- '0'
-						 "1001111" WHEN "0001"  -- '1'
-						 "0010010" WHEN "0010"  -- '2'
-						 "0000110" WHEN "0011"  -- '3'
-						 "1001100" WHEN "0100"  -- '4' 
-						 "0100100" WHEN "0101"  -- '5'
-						 "0100000" WHEN "0110"  -- '6'
-						 "0001111" WHEN "0111"  -- '7'
-						 "0000000" WHEN "1000"  -- '8'
-						 "0000100" WHEN "1001"  -- '9'
+			DISPLAY_2 <= "1000000" WHEN "0000",  -- '0'
+							 "1111001" WHEN "0001",  -- '1'
+							 "0100100" WHEN "0010",  -- '2'
+							 "0110000" WHEN "0011",  -- '3'
+							 "0011001" WHEN "0100",  -- '4' 
+							 "0010010" WHEN "0101",  -- '5'
+							 "0000010" WHEN "0110",  -- '6'
+							 "1111000" WHEN "0111",  -- '7'
+							 "0000000" WHEN "1000",  -- '8'
+							 "0010000" WHEN "1001",  -- '9'
+							 "1111111" WHEN OTHERS;
+	
+	
+		PROCESS(A,B)
+		BEGIN
+			IF (A > B) THEN
+				DIFFER <= '1';
+				EQUAL <= '0';
+			ELSIF (A < B) THEN
+				DIFFER <= '1';
+				EQUAL <= '0';
+			ELSE
+				EQUAL <= '1';
+				DIFFER <= '0';
+			END IF;
+		
+		END PROCESS;
 
-	BEGIN
-	PROCESS(A,B);
-	BEGIN
-		IF (A > B) THEN
-			DIFFER <= '1';
-			EQUAL <= '0';
-		ELSIF (A < B) THEN
-			DIFFER <= '1';
-			EQUAL <= '0';
-		ELSE
-			EQUAL <= '1';
-			DIFFER <= '0';
-		END IF
-	END PROCESS;
-END ARCH; 
-			
+END ARCH; 			
 http://vhdlguru.blogspot.com.br/2010/03/vhdl-code-for-bcd-to-7-segment-display.html
 https://stackoverflow.com/questions/21508949/bcd-to-7-segment-decoder
 https://www2.pcs.usp.br/~labdig/pdffiles_2012/contadoresVHDL.pdf
